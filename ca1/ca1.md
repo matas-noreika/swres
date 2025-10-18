@@ -10,5 +10,5 @@ T = {1 \over f} = f = {1 \over T}
 Since our application depends on a system clock and our timer may as well have a clock divisor we need to adjust our expression. It then translates to the following:
 
 ```math
-T = {1 \over {n \bullet F_CPU}}
+T = {1 \over {n \bullet F_{CPU}}}
 ```
