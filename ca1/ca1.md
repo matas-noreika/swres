@@ -3,5 +3,5 @@ The following C application is a frequency calculator using Input Capture on tim
 # Frequency calculations
 The typical calculations for period T and frequency f are given by the following:
 ```math
-> T = 1/f = f = 1/T
+T = {1 \over f} = f = {1 \over T}
 ```
