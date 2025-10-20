@@ -9,8 +9,8 @@
 
 #define F_TIMER 1000000//1MHz
 
-volatile uint32_t count = 0;
-volatile uint32_t previous_count = 0;
+static volatile uint32_t count = 0;
+static volatile uint32_t previous_count = 0;
 
 void main(void){//start of main method
   

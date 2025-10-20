@@ -30,7 +30,7 @@ void main(void){//start of main method
 	count = 0;
 
 	//configure PD2 as input pull-up
-	DDRD |= (1<<2);
+	DDRD |= (0<<2);
 	PORTD |= (1<<2);
 	
 	//configure INT0 as a falling edge triggered interrupt	
@@ -47,7 +47,7 @@ void main(void){//start of main method
 
 	while(1){//start of program loop
 	
-	  sprintf(str, "count is: %d\n", count);
+	  sprintf(str, "count is: %u\n", count);
 		usartSendString(str);
 		_delay_ms(1000);
 

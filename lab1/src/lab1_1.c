@@ -11,7 +11,7 @@
 #include "usart.h"
 
 //count variable used to store total number of button presses
-uint16_t count;
+volatile uint16_t count;
 
 //ISR decleration for PD2 (INT0)
 ISR(INT0_vect){
@@ -33,10 +33,10 @@ void main(void){//start of main method
 
 	//configure PD2 as input pull-up
 	DDRD |= (1<<2);
-	PORTD |= (1<<2);
+	//PORTD |= (1<<2);
 	
 	//configure INT0 as a falling edge triggered interrupt	
-	EICRA |= (1<<ISC01) | (0<<ISC00);
+	EICRA |= (1<<ISC01) | (1<<ISC00);
 	EIMSK |= (1<<0);//enable the external iterrupt function of INT0	
 
 	//enable global interrupts
@@ -51,12 +51,12 @@ void main(void){//start of main method
 
 	while(1){//start of program loop
 
-		sei(); //re-enable interrupts once count is updated		
 		_delay_ms(1000);
 		sprintf(str, "count is: %u\n", count);
-		sprintf(str_feq, "feq is: %.2f\n", (count-startCount)/1.0);
+		sprintf(str_feq, "feq is: %.2f\n", (count-startCount));
 		usartSendString(str);
 		usartSendString(str_feq);
+    startCount = count;
 	}//end of program loop
 
 }//end of main method
