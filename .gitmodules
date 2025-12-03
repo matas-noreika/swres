@@ -1,0 +1,3 @@
+[submodule "lib/usart_atmega"]
+	path = lib/usart_atmega
+	url = git@github.com:matas-noreika/usart_atmega.git
