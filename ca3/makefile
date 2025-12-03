@@ -27,6 +27,9 @@ clean:
 	-@rm -f $(LOCALBIN)/*.hex 2> /dev/null
 	-@rm -f $(LOCALOBJ)/*.o 2> /dev/null
 
+run-ice:
+	avarice -W -d -g -P atmega328p :3000 &
+
 # .c -> .o
 $(LOCALOBJ)/%.o: $(LOCALSRC)/%.c
 	$(CC) $(CCFLAGS) -c $< -o $@
