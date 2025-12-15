@@ -1,0 +1,15 @@
+<circuit version="1.1.0-SR1" rev="2005" stepSize="1000000" stepsPS="1000000" NLsteps="100000" reaStep="1000000" animate="0" >
+
+<item itemtype="MCU" CircId="mega328-1" mainComp="false" Show_id="true" Show_Val="false" Pos="-156,-4" rotation="0" hflip="1" vflip="1" label="mega328-1" idLabPos="0,-20" labelrot="0" valLabPos="-16,20" valLabRot="0" Frequency="1 MHz" Program="bin/ca5.hex" Auto_Load="false" saveEepr="true" Logic_Symbol="false" Rst_enabled="false" Ext_Osc="false" Wdt_enabled="false" Clk_Out="false" MainMcu="true" SerialMon="-1" />
+
+<item itemtype="Led" CircId="Led-2" mainComp="false" Show_id="false" Show_Val="false" Pos="-60,76" rotation="0" hflip="1" vflip="1" label="Led-2" idLabPos="-16,-24" labelrot="0" valLabPos="-16,20" valLabRot="0" Color="Yellow" Grounded="true" Threshold="2.4 V" MaxCurrent="30 mA" Resistance="0.6 Ω" />
+
+<item itemtype="SerialTerm" CircId="SerialTerm-3" mainComp="false" Show_id="false" Show_Val="false" Pos="-296,16" rotation="0" hflip="-1" vflip="1" label="SerialTerm-3" idLabPos="-20,-32" labelrot="0" valLabPos="-16,20" valLabRot="0" Baudrate="9600 _Bd" DataBits="8 _bits" StopBits="1 _bits" SerialMon="true" />
+
+<item itemtype="Connector" uid="Connector-1" startpinid="Led-2-lPin" endpinid="mega328-1-PORTB5" pointList="-76,76,-116,76" />
+
+<item itemtype="Connector" uid="Connector-5" startpinid="SerialTerm-3-pin0" endpinid="mega328-1-PORTD0" pointList="-272,8,-172,8,-172,12,-164,12" />
+
+<item itemtype="Connector" uid="Connector-6" startpinid="mega328-1-PORTD1" endpinid="SerialTerm-3-pin1" pointList="-164,20,-272,20,-272,24" />
+
+</circuit>

@@ -28,7 +28,6 @@ HEXS=$(ELFS:%.elf=%.hex)
 .PHONY: all clean
 
 all: clean makeLibs $(HEXS)
-	
 
 clean:
 	for lib in $(LIB_DIR_PATHS); do \
@@ -42,12 +41,11 @@ makeLibs: $(LIB_DIR_PATHS)
 		$(MAKE) -C $$lib; \
 	done
 
-
 obj/%.o: src/%.c
-	$(CC) $(CCFLAGS) $(CLFLAGS) -c $< $@
+	$(CC) $(CCFLAGS) -c $< $(CLFLAGS) -o $@
 
 bin/%.elf: obj/%.o
-	$(CC) $(CCFLAGS) $(CLFLAGS) $< $@
+	$(CC) $(CCFLAGS) $< $(CLFLAGS) -o $@
 
 bin/%.hex: bin/%.elf
 	avr-objcopy -O ihex $< $@
